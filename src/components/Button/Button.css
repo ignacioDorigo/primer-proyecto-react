@@ -1,0 +1,16 @@
+.producto__boton {
+    background-color: #0A283E;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+
+.producto__boton:hover {
+    background-color: #0f3b5b;
+
+
+}
