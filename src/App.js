@@ -12,9 +12,14 @@ export default class App extends Component {
       { nombre: "Arbejas", precio: 3500, img: "/productos/arbejas.jpg" },
     ],
     carro: [],
+    carroVisible: true,
   };
 
   render() {
+    const mostrarOcultarCarro = () => {
+      this.setState({ carroVisible: !this.state.carroVisible });
+    };
+
     const agregarAlCarro = (producto) => {
       const carro = this.state.carro;
       const estaProducto = carro.find(
@@ -40,7 +45,11 @@ export default class App extends Component {
     console.log(this.state.carro);
     return (
       <div>
-        <Navbar carro={this.state.carro}></Navbar>
+        <Navbar
+          carro={this.state.carro}
+          mostrarOcultarCarro={mostrarOcultarCarro}
+          carroVisible = {this.state.carroVisible}
+        ></Navbar>
         <Layout>
           <Titulo>Tienda</Titulo>
           <Productos
