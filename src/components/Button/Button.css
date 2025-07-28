@@ -7,10 +7,15 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
+    width: 100%;
 }
 
 .producto__boton:hover {
     background-color: #0f3b5b;
+}
 
-
+@media(width>=768px) {
+    .producto__boton {
+        width: auto;
+    }
 }

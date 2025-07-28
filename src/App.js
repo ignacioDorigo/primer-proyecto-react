@@ -11,6 +11,7 @@ export default class App extends Component {
       { nombre: "Lechuga", precio: 2500, img: "/productos/lechuga.jpg" },
       { nombre: "Arbejas", precio: 3500, img: "/productos/arbejas.jpg" },
     ],
+    carro: [],
   };
 
   render() {
@@ -19,7 +20,7 @@ export default class App extends Component {
     };
     return (
       <div>
-        <Navbar></Navbar>
+        <Navbar carro={this.state.carro}></Navbar>
         <Layout>
           <Titulo>Tienda</Titulo>
           <Productos
