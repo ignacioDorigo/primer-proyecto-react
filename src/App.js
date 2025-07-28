@@ -16,8 +16,28 @@ export default class App extends Component {
 
   render() {
     const agregarAlCarro = (producto) => {
-      console.log(producto);
+      const carro = this.state.carro;
+      const estaProducto = carro.find(
+        (prod) => prod.nombre === producto.nombre
+      );
+      if (estaProducto) {
+        // console.log("El producto esta");
+        const nuevoCarro = carro.map((prod) => {
+          if (prod.nombre === producto.nombre) {
+            return { ...prod, cantidad: prod.cantidad + 1 };
+          } else {
+            return prod;
+          }
+        });
+        this.setState({ carro: nuevoCarro });
+      } else {
+        // console.log("El producto no esta, hay que agregarlo");
+        const nuevoItem = { ...producto, cantidad: 1 };
+        const nuevoCarro = [...carro, nuevoItem];
+        this.setState({ carro: nuevoCarro });
+      }
     };
+    console.log(this.state.carro);
     return (
       <div>
         <Navbar carro={this.state.carro}></Navbar>
