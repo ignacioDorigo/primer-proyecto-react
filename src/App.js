@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Productos from "./components/Productos/Productos";
 import Layout from "./components/Layout/Layout";
 import Titulo from "./components/Titulo/Titulo";
+import Navbar from "./components/Navbar/Navbar";
 
 export default class App extends Component {
   state = {
@@ -18,6 +19,7 @@ export default class App extends Component {
     };
     return (
       <div>
+        <Navbar></Navbar>
         <Layout>
           <Titulo>Tienda</Titulo>
           <Productos
