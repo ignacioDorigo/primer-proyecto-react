@@ -12,7 +12,7 @@ export default class App extends Component {
       { nombre: "Arbejas", precio: 3500, img: "/productos/arbejas.jpg" },
     ],
     carro: [],
-    carroVisible: true,
+    carroVisible: false,
   };
 
   render() {
