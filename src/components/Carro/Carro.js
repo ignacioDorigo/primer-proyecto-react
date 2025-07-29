@@ -14,7 +14,7 @@ export default class Carro extends Component {
       return cantidad;
     };
 
-    const { carro, mostrarOcultarCarro, carroVisible } = this.props;
+    const { carro, mostrarOcultarCarro, carroVisible,eliminarDelCarro } = this.props;
     return (
       <div className="div__carro">
         <button className="carro" onClick={mostrarOcultarCarro}>
@@ -25,7 +25,7 @@ export default class Carro extends Component {
         </button>
 
         {carroVisible ? (
-          <DetallesCarro carro={carro}></DetallesCarro>
+          <DetallesCarro carro={carro} eliminarDelCarro={eliminarDelCarro}></DetallesCarro>
         ) : (
           <div>
             <BubbleAlert

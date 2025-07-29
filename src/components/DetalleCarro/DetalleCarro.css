@@ -5,7 +5,18 @@
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #eee;
+    position: relative;
 }
-.detalle__img{
+
+.detalle__img {
     width: 70px;
+}
+
+.detalle__cancelarSVG {
+    color: #d01717;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    
 }

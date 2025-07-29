@@ -20,6 +20,15 @@ export default class App extends Component {
       this.setState({ carroVisible: !this.state.carroVisible });
     };
 
+    const eliminarDelCarro = (producto) => {
+      const nuevoCarro = this.state.carro.filter(
+        (prod) => prod.nombre !== producto.nombre
+      );
+      console.log("carrooooo");
+      console.log(nuevoCarro);
+      return this.setState({ carro: nuevoCarro });
+    };
+
     const agregarAlCarro = (producto) => {
       const carro = this.state.carro;
       const estaProducto = carro.find(
@@ -48,7 +57,8 @@ export default class App extends Component {
         <Navbar
           carro={this.state.carro}
           mostrarOcultarCarro={mostrarOcultarCarro}
-          carroVisible = {this.state.carroVisible}
+          carroVisible={this.state.carroVisible}
+          eliminarDelCarro={eliminarDelCarro}
         ></Navbar>
         <Layout>
           <Titulo>Tienda</Titulo>
